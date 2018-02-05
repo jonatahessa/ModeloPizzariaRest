@@ -23,8 +23,8 @@ import javax.ws.rs.core.MediaType;
  *
  * @author joliveira
  */
-@Path("generic")
-public class GenericResource {
+@Path("produtos")
+public class RestProdutos {
     private ProdutoService produtoService;
 
     @Context
@@ -33,25 +33,25 @@ public class GenericResource {
     /**
      * Creates a new instance of GenericResource
      */
-    public GenericResource() {
+    public RestProdutos() {
     }
 
     /**
-     * Retrieves representation of an instance of com.mycompany.restfulapp.GenericResource
+     * Retrieves representation of an instance of com.mycompany.restfulapp.RestProdutos
      * @return an instance of java.lang.String
      */
     @GET
     @Produces("application/json")
-    @Path("produto/listarTodos")
+    @Path("listarTodos")
     public String listarTodos() throws Exception {
         Gson gson = new Gson();
         List<Produto> produtos = produtoService.listarTudo();
-        
+        System.out.println(gson.toJson(produtos));
         return gson.toJson(produtos);
     }
 
     /**
-     * PUT method for updating or creating an instance of GenericResource
+     * PUT method for updating or creating an instance of RestProdutos
      * @param content representation for the resource
      */
     @PUT

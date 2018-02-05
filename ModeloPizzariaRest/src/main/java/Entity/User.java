@@ -14,6 +14,7 @@ public class User {
     private int codigo;
     private String login;
     private String senha;
+    private String role;
 
     public User() {
     }
@@ -40,5 +41,13 @@ public class User {
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 }
